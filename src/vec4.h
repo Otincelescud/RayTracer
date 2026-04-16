@@ -54,7 +54,6 @@ public:
 
 // Define Alias
 using point4 = vec4;
-using color4 = vec4;
 
 // Vector Utility Functions
 
