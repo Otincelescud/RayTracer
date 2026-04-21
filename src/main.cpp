@@ -7,6 +7,7 @@
 #include "hittable.h"
 #include "hittable_list.h"
 #include "sphere.h"
+#include "plane.h"
 #include "camera.h"
 
 int main() {
@@ -15,7 +16,8 @@ int main() {
     hittable_list world;
 
     world.add(make_shared<sphere>(point3(0, 0, -1), 0.5));
-    world.add(make_shared<sphere>(point3(0, -100.5, -1), 100));
+    //world.add(make_shared<sphere>(point3(0, -100.5, -1), 100));
+    world.add(make_shared<plane>(point3(0, -100.5, -1), vec3(0, 1, 0)));
 
     // Use Camera
     camera cam;
