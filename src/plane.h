@@ -4,9 +4,14 @@
 #include "raytracer.h"
 #include "vec3.h"
 #include "hittable.h"
+#include "ray.h"
+#include "interval.h"
 
 class plane : public hittable {
 public:
+    point3 center;
+    vec3 norm;
+
     plane(const point3 center, const vec3 norm) : center(center), norm(norm) {}
 
     bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
@@ -25,10 +30,6 @@ public:
         
         return true;
     }
-
-private:
-    point3 center;
-    vec3 norm;
 };
 
 #endif
